@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/trendz/static/css/main.6d05cd94.css",
+    "main.js": "/trendz/static/js/main.abdbf3b4.js",
+    "index.html": "/trendz/index.html",
+    "main.6d05cd94.css.map": "/trendz/static/css/main.6d05cd94.css.map",
+    "main.abdbf3b4.js.map": "/trendz/static/js/main.abdbf3b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6d05cd94.css",
+    "static/js/main.abdbf3b4.js"
+  ]
+}
