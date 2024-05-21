@@ -1,18 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
-
-function Products() {
-    const retrive = async () => {
-        await fetch('https://dummyjson.com/products')
-            .then(res => res.json())
-            .then(console.log);
-    };
-    useEffect(() => {
-
-    }, []);
+function ProductList() {
     return (
-        <div>Products</div>
+        <div>ProductList</div>
     )
 }
 
-export default Products
+export default ProductList
