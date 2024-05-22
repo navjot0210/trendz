@@ -28,8 +28,8 @@ function Product() {
       .then(data => {
         setProducts(data.products);
         setLoading(false);
-        setTheProduct(data.products[id]);
-        console.log(data.products[id]);
+        setTheProduct(data.products[id - 1]);
+        console.log(data.products[id - 1]);
         getDeliveryDate();
       })
       .catch(err => {
