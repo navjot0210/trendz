@@ -88,7 +88,7 @@ function Product() {
         </div>
       </div>
       <Suggestions category={theProduct.category} />
-    </div>
+    </section>
   );
 }
 
