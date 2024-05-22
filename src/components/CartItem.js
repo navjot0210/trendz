@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function CartItem({ id, thumbnail, description, price, removeFromCart }) {
   return (
-    <li>
+    <li key={Date.now()}>
       <LuTrash2 onClick={() => removeFromCart(id)} />
       <Link to={`product/${id}`}><img src={thumbnail} alt={description} /></Link>
       <div>
