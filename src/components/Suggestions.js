@@ -14,8 +14,6 @@ function Suggestions({ category }) {
         const products = data.products.length > 4 ? data.products.slice(0, 5) : data.products;
         setSuggestedProducts(products);
         setLoading(false);
-        console.log('suggested');
-        console.log(data);
       })
       .catch(err => {
         setError(err);
