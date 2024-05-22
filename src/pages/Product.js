@@ -8,6 +8,7 @@ function Product() {
   const [error, setError] = useState(null);
   const [theProduct, setTheProduct] = useState(null);
   const [picturePointer, setPicturePointer] = useState(0);
+  const [deliveryDate, setDeliveryDate] = useState('');
 
   useEffect(() => {
     fetch('https://dummyjson.com/products')
@@ -17,6 +18,7 @@ function Product() {
         setLoading(false);
         setTheProduct(data.products[1]);
         console.log(data.products[1]);
+        getDeliveryDate();
       })
       .catch(err => {
         setError(err);
@@ -31,6 +33,14 @@ function Product() {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
+
+  const getDeliveryDate = () => {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() + 2);
+    const options = { weekday: 'long', month: 'long', day: 'numeric' };
+    const formattedDate = new Intl.DateTimeFormat('en-US', options).format(currentDate);
+    setDeliveryDate(`FREE delivery ${formattedDate}`);
+  };
 
   return (
     <div>
@@ -65,6 +75,7 @@ function Product() {
                 <p>Discount: {theProduct.discountPercentage}%</p>
             </div>
             <p>Available on stock: {theProduct.stock > 0 ? theProduct.stock : 'Out of stock'}</p>
+            <p>{deliveryDate}</p>
             <div className='flex'>
                 <button className='primary'>Buy now</button>
                 <button className='secondary'><i className="fas fa-cart-plus"></i> Add to cart</button>
