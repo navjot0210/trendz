@@ -5,6 +5,8 @@
   --primary-background: #f8f9fe;
   --box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
   --secondary-text-color: #555;
+  --transition: all 0.3s ease-in-out;
+  --cursor: pointer;
 }
 
 html {
@@ -77,7 +79,7 @@ html {
 
 .header-options {
   position: relative;
-  right: -7rem;
+  left: 6rem;
 }
 
 .header-options ul {
@@ -85,8 +87,8 @@ html {
   font-size: 1.7rem;
   font-weight: 500;
   color: var(--secondary-text-color);
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  cursor: var(--cursor);
+  transition: var(--transition);
 }
 
 .header-options li:hover {
@@ -96,17 +98,85 @@ html {
 .user {
   flex-direction: row;
   color: #131547;
-  position: relative;
-  right: -27rem;
+  padding-left: 266px;
 }
 
 .user i {
   font-size: 2.4rem;
   line-height: 70px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  cursor: var(--cursor);
+  transition: var(--transition);
 }
 
 .user i:hover {
   color: #636370;
+}
+
+
+/* ------------------------------------------ */
+/* Footer                                     */
+/* ------------------------------------------ */
+footer {
+  color: #f8f9fe;
+  margin-top: 80px;
+  height: 440px;
+  background: linear-gradient( #131547, #000);
+}
+
+.socials {
+  justify-content: center;
+  padding: 60px 0 0;
+  font-size: 3.4rem;
+  color: var(--primary-background);
+  cursor: var(--cursor);
+  transition: var(--transition);
+}
+
+.socials i:hover {
+  color: #af295a;
+}
+
+.main-footer {
+  margin-top: 60px;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.7rem;
+  border-bottom: 1px solid #acbafa;
+}
+
+.ft-logo {
+  margin-top: -60px;
+  width: 240px;
+  height: 160px;
+}
+
+.logo-text {
+  margin: -10px 0 0 18px;
+  font-family: "Dancing Script", cursive;;
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: #93a7ff;
+}
+
+footer h4 {
+  padding-bottom: 15px;
+}
+
+footer li {
+  color: #acbafa;
+  cursor: var(--cursor);
+}
+
+footer li:hover {
+  text-decoration: underline;
+}
+
+footer span {
+  padding-bottom: 60px;
+}
+
+.copyright {
+  padding: 34px 0 30px;
+  font-size: 1.8rem;
+  font-weight: 500;
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, useLocation, Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
@@ -10,6 +11,8 @@ function Product() {
   const [theProduct, setTheProduct] = useState(null);
   const [picturePointer, setPicturePointer] = useState(0);
   const [deliveryDate, setDeliveryDate] = useState('');
+  const { id } = useParams();
+  const location = useLocation();
 
   const getDeliveryDate = () => {
     const currentDate = new Date();
@@ -20,13 +23,13 @@ function Product() {
   };
 
   useEffect(() => {
-    fetch('https://dummyjson.com/products')
+    fetch(`https://dummyjson.com/products/${id}`)
       .then(res => res.json())
       .then(data => {
         setProducts(data.products);
+        setTheProduct(data);
         setLoading(false);
-        setTheProduct(data.products[1]);
-        console.log(data.products[1]);
+        console.log(data);
         getDeliveryDate();
       })
       .catch(err => {
@@ -42,8 +45,6 @@ function Product() {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-
-
 
   return (
     <div>
