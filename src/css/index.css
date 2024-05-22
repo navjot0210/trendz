@@ -6,7 +6,7 @@ html {
 }
 
 .container {
-  width: min(100% - 30px, 1080px);
+  width: min(100% - 30px, 1200px);
   margin-inline: auto;
 }
 
