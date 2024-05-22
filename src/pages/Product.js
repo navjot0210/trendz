@@ -19,6 +19,7 @@ function Product() {
   };
 
   useEffect(() => {
+    const getDeliveryDate = ();
     fetch('https://dummyjson.com/products')
       .then(res => res.json())
       .then(data => {

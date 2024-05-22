@@ -25,3 +25,16 @@ html {
 .space-between {
   justify-content: space-between;
 }
+
+/* ------------------------------------------ */
+/* Header                                     */
+/* ------------------------------------------ */
+.top-header {
+  height: 30px;
+  background-color: #055017;
+}
+
+.bottom-header {
+  height: 60px;
+  background-color: #f0ffff;
+}
