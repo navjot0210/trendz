@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('./product-temp.css'); /* remove when finished */
 
 html {
   scrollbar-gutter: stable;
