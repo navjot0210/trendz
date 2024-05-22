@@ -47,8 +47,8 @@ function Product() {
   }
 
   return (
-    <div>
-      <div className='wrapper flex'>
+    <section className='product-detail'>
+      <div className='container wrapper flex space-between'>
         <div className='picture-preview'>
             <div className='picture-box'>
                 <img src={theProduct.images[picturePointer]} alt={theProduct.title}></img>
@@ -68,25 +68,25 @@ function Product() {
         </div>
         <div className='details'>
             <h1>{theProduct.title}</h1>
-            <p>{theProduct.description}</p>
-            <p>Brand name: {theProduct.brand}</p>
-            <p>Category: {theProduct.category}</p>
+            <p className='description'>{theProduct.description}</p>
+            <p><span>Brand name: </span>{theProduct.brand}</p>
+            <p><span>Category: </span>{theProduct.category}</p>
             <div className='price'>
                 <div className='flex'>
-                    <p><span>${theProduct.price}</span></p>
-                    <p>${(theProduct.price * (1 - (theProduct.discountPercentage / 100))).toFixed(2)}</p>
+                    <p className='original-price'><span>${theProduct.price}</span></p>
+                    <p className='discounted-price'>${(theProduct.price * (1 - (theProduct.discountPercentage / 100))).toFixed(2)}</p>
+                    <p className='discount'>{theProduct.discountPercentage}% OFF</p>
                 </div>
-                <p>Discount: {theProduct.discountPercentage}%</p>
             </div>
-            <p>Available on stock: {theProduct.stock > 0 ? theProduct.stock : 'Out of stock'}</p>
-            <p>{deliveryDate}</p>
+            <p className='in-stock'>Available in-stock: {theProduct.stock > 0 ? theProduct.stock : 'Out of stock'}</p>
+            <p className='delivery-date'>{deliveryDate}</p>
             <div className='flex'>
                 <button className='primary'>Buy now</button>
                 <button className='secondary'><i className="fas fa-cart-plus"></i> Add to cart</button>
             </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
