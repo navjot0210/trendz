@@ -2,18 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useLocation, Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Suggestions from '../components/Suggestions';
-
+import { ProductContext, useProductContext } from '../components/ProductContext';
 
 
 function Product() {
-  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [theProduct, setTheProduct] = useState(null);
   const [picturePointer, setPicturePointer] = useState(0);
   const [deliveryDate, setDeliveryDate] = useState('');
   const { id } = useParams();
-  const location = useLocation();
+  const { setCart } = useProductContext();
+  const addToCart = () => {
+      setCart(prev => [...prev, theProduct]);
+  };
 
   const getDeliveryDate = () => {
     const currentDate = new Date();
@@ -27,10 +29,8 @@ function Product() {
     fetch(`https://dummyjson.com/products/${id}`)
       .then(res => res.json())
       .then(data => {
-        setProducts(data.products);
         setTheProduct(data);
         setLoading(false);
-        console.log(data);
         getDeliveryDate();
       })
       .catch(err => {
@@ -83,7 +83,11 @@ function Product() {
             <p className='delivery-date'>{deliveryDate}</p>
             <div className='flex'>
                 <button className='primary'>Buy now</button>
-                <button className='secondary'><i className="fas fa-cart-plus"></i> Add to cart</button>
+                <button className='secondary'
+                    onClick={addToCart}
+                    >   
+                    <i className="fas fa-cart-plus"></i> Add to cart
+                </button>
             </div>
         </div>
       </div>
