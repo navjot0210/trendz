@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, useLocation, Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
@@ -10,6 +11,8 @@ function Product() {
   const [theProduct, setTheProduct] = useState(null);
   const [picturePointer, setPicturePointer] = useState(0);
   const [deliveryDate, setDeliveryDate] = useState('');
+  const { id } = useParams();
+  const location = useLocation();
 
   const getDeliveryDate = () => {
     const currentDate = new Date();
@@ -25,8 +28,8 @@ function Product() {
       .then(data => {
         setProducts(data.products);
         setLoading(false);
-        setTheProduct(data.products[1]);
-        console.log(data.products[1]);
+        setTheProduct(data.products[id]);
+        console.log(data.products[id]);
         getDeliveryDate();
       })
       .catch(err => {
