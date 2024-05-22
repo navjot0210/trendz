@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
+
 function Product() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -19,7 +20,6 @@ function Product() {
   };
 
   useEffect(() => {
-    const getDeliveryDate = ();
     fetch('https://dummyjson.com/products')
       .then(res => res.json())
       .then(data => {
