@@ -11,7 +11,7 @@ function Cart() {
     return (
         <section className='cart'>
             <ul>
-                {cart.map(item => <CartItem key={Date.now()} {...item} removeFromCart={removeFromCart} />)}
+                {cart.map(item => <CartItem key={Date.now() + Math.random() * 99999} {...item} removeFromCart={removeFromCart} />)}
             </ul>
             <div>
                 <h3>Subtotal: ${cart.reduce((prev, curr) => prev + curr.price, 0)}cad</h3>
