@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useLocation, Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import Suggestions from '../components/Suggestions';
 
 
 
@@ -36,7 +37,7 @@ function Product() {
         setError(err);
         setLoading(false);
       });
-  }, [deliveryDate]);
+  }, [deliveryDate, id]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -86,7 +87,8 @@ function Product() {
             </div>
         </div>
       </div>
-    </section>
+      <Suggestions category={theProduct.category} />
+    </div>
   );
 }
 
