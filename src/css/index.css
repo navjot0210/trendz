@@ -1,12 +1,18 @@
 @charset "utf-8";
 @import url('./product-temp.css'); /* remove when finished */
 
+:root {
+  --primary-background: #f8f9fe;
+  --box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+  --secondary-text-color: #555;
+}
+
 html {
   scrollbar-gutter: stable;
 }
 
 .container {
-  width: min(100% - 30px, 1080px);
+  width: min(100% - 30px, 1200px);
   margin-inline: auto;
 }
 
@@ -24,4 +30,83 @@ html {
 
 .space-between {
   justify-content: space-between;
+}
+
+.up-case {
+  text-transform: uppercase;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.gap-30 {
+  gap: 30px;
+}
+
+.width-33 {
+  width: 33.33%;
+}
+
+/* ------------------------------------------ */
+/* Header                                     */
+/* ------------------------------------------ */
+.sub-header {
+  height: 30px;
+  font-size: 14px;
+  line-height: 30px;
+  background-color: #212486;
+  color: var(--primary-background);
+}
+
+.main-header {
+  height: 70px;
+  line-height: 70px;
+  background-color: var(--primary-background);
+  box-shadow: var(--box-shadow);
+}
+
+.company-icon {
+  align-items: flex-start;
+}
+
+.logo {
+  height: 70px;
+  width: auto;
+}
+
+.header-options {
+  position: relative;
+  right: -7rem;
+}
+
+.header-options ul {
+  align-items: center;
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--secondary-text-color);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.header-options li:hover {
+  color: rgb(40, 40, 41);
+}
+
+.user {
+  flex-direction: row;
+  color: #131547;
+  position: relative;
+  right: -27rem;
+}
+
+.user i {
+  font-size: 2.4rem;
+  line-height: 70px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.user i:hover {
+  color: #636370;
 }
