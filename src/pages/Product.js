@@ -23,13 +23,13 @@ function Product() {
   };
 
   useEffect(() => {
-    fetch('https://dummyjson.com/products')
+    fetch(`https://dummyjson.com/products/${id}`)
       .then(res => res.json())
       .then(data => {
         setProducts(data.products);
+        setTheProduct(data);
         setLoading(false);
-        setTheProduct(data.products[id - 1]);
-        console.log(data.products[id - 1]);
+        console.log(data);
         getDeliveryDate();
       })
       .catch(err => {
@@ -45,8 +45,6 @@ function Product() {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-
-
 
   return (
     <div>
