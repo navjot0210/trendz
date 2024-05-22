@@ -25,16 +25,14 @@ function Footer() {
               <li>Contact Us</li>
             </ul>
           </span>
-
           <span className='footer-firm'>
           <h4 className='up-case'>Our Firm</h4>
           <ul>
-              <li>Our Legacy</li>
               <li>Locations</li>
-              <li>Carers</li>
+              <li>Careers</li>
+              <li>Privacy Policy</li>
             </ul>
           </span>
-
           <span className='footer-results'>
           <h4 className='up-case'>Resources</h4>
           <ul>
@@ -43,6 +41,9 @@ function Footer() {
               <li>Free guides</li>
             </ul>
           </span>
+        </div>
+        <div className='grid center copyright'>
+          <p>&copy; 2024 Trendz | All Rights Reserved</p>
         </div>
       </div>
     </footer>

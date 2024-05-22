@@ -133,7 +133,7 @@ footer {
 }
 
 .socials i:hover {
-  color: #93a7ff;
+  color: #af295a;
 }
 
 .main-footer {
@@ -145,17 +145,17 @@ footer {
 }
 
 .ft-logo {
-  margin-top: -30px;
+  margin-top: -60px;
   width: 240px;
   height: 160px;
 }
 
 .logo-text {
-  margin: -40px 0 0 18px;
+  margin: -10px 0 0 18px;
   font-family: "Dancing Script", cursive;;
   font-size: 2.6rem;
   font-weight: 500;
-  color: #cc1457;
+  color: #93a7ff;
 }
 
 footer h4 {
@@ -163,13 +163,20 @@ footer h4 {
 }
 
 footer li {
-  color: #93a7ff;
+  color: #acbafa;
   cursor: var(--cursor);
 }
 
 footer li:hover {
   text-decoration: underline;
 }
+
 footer span {
   padding-bottom: 60px;
+}
+
+.copyright {
+  padding: 34px 0 30px;
+  font-size: 1.8rem;
+  font-weight: 500;
 }
