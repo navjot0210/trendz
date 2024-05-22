@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function Product() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [theProduct, setTheProduct] = useState(null); //temp
+  const [theProduct, setTheProduct] = useState(null);
+  const [picturePointer, setPicturePointer] = useState(0);
 
   useEffect(() => {
     fetch('https://dummyjson.com/products')
@@ -12,8 +15,8 @@ function Product() {
       .then(data => {
         setProducts(data.products);
         setLoading(false);
-        setTheProduct(data.products[0]);
-        console.log(data.products[0]);
+        setTheProduct(data.products[1]);
+        console.log(data.products[1]);
       })
       .catch(err => {
         setError(err);
@@ -26,7 +29,7 @@ function Product() {
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>; // 404
+    return <div>Error: {error.message}</div>;
   }
 
   return (
@@ -34,10 +37,19 @@ function Product() {
       <div className='wrapper flex'>
         <div className='picture-preview'>
             <div className='picture-box'>
-                <img src={theProduct.images[0]}></img>
+                <img src={theProduct.images[picturePointer]} alt={theProduct.title}></img>
             </div>
             <div className='thumbnails flex'>
-                {theProduct.images.map(image => {return <img src={image}></img>})}
+                {theProduct.images.map((image, index) => (
+                  <img 
+                  src={image} 
+                  alt={`${theProduct.title} thumbnail ${index + 1}`} 
+                  key={index}
+                  onClick={() => setPicturePointer(index)}
+                  className={picturePointer === index ? 'selected-thumbnail' : ''}
+                  >
+                  </img>
+                ))}
             </div>
         </div>
         <div className='details'>
@@ -46,14 +58,19 @@ function Product() {
             <p>Brand name: {theProduct.brand}</p>
             <p>Category: {theProduct.category}</p>
             <div className='price'>
-                <p><span>{theProduct.price}</span></p>
-                <p>{(theProduct.price * (1 - (theProduct.discountPercentage / 100))).toFixed(2)}</p>
+                <div className='flex'>
+                    <p><span>${theProduct.price}</span></p>
+                    <p>${(theProduct.price * (1 - (theProduct.discountPercentage / 100))).toFixed(2)}</p>
+                </div>
                 <p>Discount: {theProduct.discountPercentage}%</p>
             </div>
             <p>Available on stock: {theProduct.stock > 0 ? theProduct.stock : 'Out of stock'}</p>
+            <div className='flex'>
+                <button className='primary'>Buy now</button>
+                <button className='secondary'><i className="fas fa-cart-plus"></i> Add to cart</button>
+            </div>
         </div>
       </div>
-
     </div>
   );
 }
