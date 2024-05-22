@@ -110,3 +110,12 @@ html {
 .user i:hover {
   color: #636370;
 }
+
+
+/* ------------------------------------------ */
+/* Footer                                     */
+/* ------------------------------------------ */
+.sub-footer {
+  height: 140px;
+  background: #000 url(../img/footer-bg.jpg) center / cover no-repeat fixed;
+}
