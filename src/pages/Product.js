@@ -10,6 +10,14 @@ function Product() {
   const [picturePointer, setPicturePointer] = useState(0);
   const [deliveryDate, setDeliveryDate] = useState('');
 
+  const getDeliveryDate = () => {
+    const currentDate = new Date();
+    currentDate.setDate(currentDate.getDate() + 2);
+    const options = { weekday: 'long', month: 'long', day: 'numeric' };
+    const formattedDate = new Intl.DateTimeFormat('en-US', options).format(currentDate);
+    setDeliveryDate(`FREE delivery ${formattedDate}`);
+  };
+
   useEffect(() => {
     fetch('https://dummyjson.com/products')
       .then(res => res.json())
@@ -24,7 +32,7 @@ function Product() {
         setError(err);
         setLoading(false);
       });
-  }, []);
+  }, [deliveryDate]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -34,13 +42,7 @@ function Product() {
     return <div>Error: {error.message}</div>;
   }
 
-  const getDeliveryDate = () => {
-    const currentDate = new Date();
-    currentDate.setDate(currentDate.getDate() + 2);
-    const options = { weekday: 'long', month: 'long', day: 'numeric' };
-    const formattedDate = new Intl.DateTimeFormat('en-US', options).format(currentDate);
-    setDeliveryDate(`FREE delivery ${formattedDate}`);
-  };
+
 
   return (
     <div>
