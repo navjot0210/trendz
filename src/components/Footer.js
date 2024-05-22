@@ -1,39 +1,52 @@
-import React from 'react'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import footerLogo from '../img/footer-icon.png';
 
 function Footer() {
   return (
     <footer>
-      <div className='sub-footer'>
-        <div className='container flex space-between'>
-          <p className='up-case'>Free shipping on your first order!</p>
-          <div className='top-side-options flex gap-20'>
-            <p className='up-case'>Usd <i class="fa-solid fa-angle-down"></i></p>
-            <p>English <i className="fa-solid fa-angle-down"></i></p>
-            <p>My Account <i className="fa-solid fa-angle-down"></i></p>
-          </div>
+      <div className='container'>
+        <div className='socials flex gap-30'>
+          <i className="fa-brands fa-facebook"></i>
+          <i className="fa-brands fa-x-twitter"></i>
+          <i className="fa-brands fa-youtube"></i>
+          <i className="fa-brands fa-instagram"></i>
+          <i className="fa-brands fa-linkedin"></i>
         </div>
-      </div>
-      <div className='main-footer'>
-        <div className='flex container'>
-          <div className='width-33 company-icon'>
-            <img src={companyLogo} className='logo' alt='Trendz' />
-          </div>
-          <div className='width-33 footer-options up-case'>
-            <ul className='flex gap-30'>
-              <li>About us</li>
-              <li>Products</li>
-              <li>Offers</li>
+        <div className='main-footer flex'>
+          <span className='footer-logo'>
+            <img src={footerLogo} className='ft-logo' alt='Trendz' />
+            <p className='logo-text'>Your shopping partner</p>
+          </span>
+          <span className='footer-about'>
+            <h4 className='up-case'>About us</h4>
+            <ul>
+              <li>Our Team</li>
+              <li>Customer Reviews</li>
+              <li>Contact Us</li>
             </ul>
-          </div>
-          <div className='width-33 user flex gap-30'>
-            <i className="fa-solid fa-magnifying-glass"></i>
-            <i className="fa-solid fa-cart-shopping"></i>
-            <i className="fa-solid fa-user"></i>
-          </div>
+          </span>
+
+          <span className='footer-firm'>
+          <h4 className='up-case'>Our Firm</h4>
+          <ul>
+              <li>Our Legacy</li>
+              <li>Locations</li>
+              <li>Carers</li>
+            </ul>
+          </span>
+
+          <span className='footer-results'>
+          <h4 className='up-case'>Resources</h4>
+          <ul>
+              <li>Blogs</li>
+              <li>Newsletter</li>
+              <li>Free guides</li>
+            </ul>
+          </span>
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;
