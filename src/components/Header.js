@@ -31,9 +31,9 @@ function Header() {
           </div>
           <div className="width-33 header-options up-case">
             <ul className="flex gap-30">
-              <li>About us</li>
-              <li>Products</li>
-              <li>Offers</li>
+              <Link to="/about/"><li>About us</li></Link>
+              <Link to="/#products-list"><li>Products</li></Link>
+              <Link to="/"><li>Offers</li></Link>
             </ul>
           </div>
           <div className="width-33 user flex gap-30">

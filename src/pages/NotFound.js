@@ -1,9 +1,13 @@
 import React from "react";
 import "../css/error.css";
+import { Helmet } from "react-helmet";
 
 function NotFound() {
   return (
     <div className="page">
+      <Helmet>
+        <title>404:Page not found</title>
+      </Helmet>
       <div className="main_wrapper">
         <div className="main">
           <div className="antenna">

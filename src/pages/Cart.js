@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Helmet } from "react-helmet";
 import {
   ProductContext,
   useProductContext,
@@ -14,6 +15,9 @@ function Cart() {
   };
   return (
     <section className="cart container">
+      <Helmet>
+        <title>Trendz shopping cart</title>
+      </Helmet>
       {cart.length > 0 ? (
         <>
           <ul className="cart-items">
