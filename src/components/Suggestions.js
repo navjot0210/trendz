@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-
-
 
 function Suggestions({ category }) {
   const [loading, setLoading] = useState(true);
@@ -10,13 +8,14 @@ function Suggestions({ category }) {
 
   useEffect(() => {
     fetch(`https://dummyjson.com/products/category/${category}`)
-      .then(res => res.json())
-      .then(data => {
-        const products = data.products.length > 4 ? data.products.slice(0, 5) : data.products;
+      .then((res) => res.json())
+      .then((data) => {
+        const products =
+          data.products.length > 4 ? data.products.slice(0, 5) : data.products;
         setSuggestedProducts(products);
         setLoading(false);
       })
-      .catch(err => {
+      .catch((err) => {
         setError(err);
         setLoading(false);
       });
@@ -31,29 +30,28 @@ function Suggestions({ category }) {
   }
 
   return (
-    <div className='similar-products'>
-    <div className='container'>
-      <h2>Products you may like</h2>
-      <div className='suggestions flex space-between container'>
-        {suggestedProducts.map(product => (
-          <NavLink to={`/product/${product.id}`} key={product.id}>
-            <div className='suggestion'>
-              <img src={product.images[0]} alt={product.title} />
-              <div className='flex space-between'>
-                <p className='suggest-name'>{product.title}</p>
-<<<<<<< HEAD
-=======
+    <div className="similar-products">
+      <div className="container">
+        <h2>Products you may like</h2>
+        <div className="suggestions flex space-between container">
+          {suggestedProducts.map((product) => (
+            <NavLink to={`/product/${product.id}`} key={product.id}>
+              <div className="suggestion">
+                <img src={product.images[0]} alt={product.title} />
+                <div className="flex space-between">
+                  <p className="suggest-name">{product.title}</p>
+                </div>
+                <div className="flex space-between">
+                  <span className="price">${product.price}</span>
+                  <span className="cart">
+                    <i className="fa-solid fa-cart-shopping"></i>
+                  </span>
+                </div>
               </div>
-              <div className='flex space-between'>
-                <span className='price'>${product.price}</span>
-                <span className='cart'><i className='fa-solid fa-cart-shopping'></i></span>
->>>>>>> 2a2825f1cdd8ee0c521181ed71cbcb6efef90875
-              </div>
-            </div>
-          </NavLink>
-        ))}
+            </NavLink>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 }

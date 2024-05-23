@@ -17,7 +17,6 @@
     visibility: visible;
   }
 
-
   .backdrop {
     position: absolute;
     top: 0;
@@ -51,8 +50,8 @@
     }
   }
 
-  input[type=text],
-  input[type=password] {
+  input[type="text"],
+  input[type="password"] {
     width: 100%;
   }
 }

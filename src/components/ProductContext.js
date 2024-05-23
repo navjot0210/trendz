@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect } from "react";
 
 export const ProductContext = createContext();
 
@@ -6,7 +6,7 @@ export const useProductContext = () => {
   const [login, setLogin] = useState(false);
   const [cart, setCart] = useState(() => {
     try {
-      return JSON.parse(localStorage.getItem('cart')) ?? [];
+      return JSON.parse(localStorage.getItem("cart")) ?? [];
     } catch (error) {
       console.error(error);
       return [];
@@ -14,7 +14,7 @@ export const useProductContext = () => {
   });
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   const context = useContext(ProductContext);

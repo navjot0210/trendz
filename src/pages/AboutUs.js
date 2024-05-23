@@ -30,7 +30,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       {/* Intro Section */}
       <section className="intro-section">
         <h1 className="intro-title">Welcome to Trendz</h1>
