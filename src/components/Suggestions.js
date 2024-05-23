@@ -22,7 +22,7 @@ function Suggestions({ category }) {
   }, [category]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div></div>;
   }
 
   if (error) {
