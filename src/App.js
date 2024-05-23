@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound';
 import Cart from './pages/Cart';
 import Home from './pages/Home';
 import LoginForm from './components/LoginForm';
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   return (

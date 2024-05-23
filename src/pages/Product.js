@@ -4,7 +4,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import Suggestions from '../components/Suggestions';
 import { ProductContext, useProductContext } from '../components/ProductContext';
 import Rating from 'react-rating';
-
+import {Helmet} from "react-helmet";
+import { motion } from "framer-motion";
 
 
 function Product() {
@@ -34,6 +35,7 @@ function Product() {
         setTheProduct(data);
         setLoading(false);
         getDeliveryDate();
+        window.scrollTo(0, 0);
       })
       .catch(err => {
         setError(err);
@@ -51,6 +53,9 @@ function Product() {
 
   return (
     <section className='product-detail'>
+      <Helmet>
+        <title>{theProduct.title} on Trendz</title>
+      </Helmet>
       <div className='container wrapper flex space-between'>
         <div className='picture-preview'>
             <div className='picture-box'>
