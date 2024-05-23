@@ -1,0 +1,102 @@
+/* Styles for the Intro Section */
+.intro-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 0 20px;
+}
+
+.intro-title {
+  font-size: 2.5rem;
+}
+
+.intro-subtitle {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+/* Styles for the Meet Our Team Section */
+.team-section {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.team-title {
+  margin-bottom: 2rem;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 0.5rem;
+}
+
+.team-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.team-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.team-role {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Styles for the Contact Us and Feedback Form Section */
+.contact-feedback-section {
+  margin: 2rem 0;
+}
+
+.contact-title,
+.feedback-title {
+  margin-bottom: 1rem;
+}
+
+.contact-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-list li {
+  margin-bottom: 0.5rem;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.feedback-form button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.feedback-form button:hover {
+  background-color: #0056b3;
+}
