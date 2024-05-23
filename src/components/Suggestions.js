@@ -41,6 +41,10 @@ function Suggestions({ category }) {
               <div className='flex space-between'>
                 <p className='suggest-name'>{product.title}</p>
               </div>
+              <div className='flex space-between'>
+                <span className='price'>${product.price}</span>
+                <span className='cart'><i className='fa-solid fa-cart-shopping'></i></span>
+              </div>
             </div>
           </NavLink>
         ))}

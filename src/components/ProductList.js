@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import ProductListItem from './ProductListItem';
 import { ProductContext, useProductContext } from './ProductContext';
-import '../css/products.css';
+// import '../css/products.css';
 import { Link } from 'react-router-dom';
 
 function ProductList() {
@@ -69,21 +69,23 @@ function ProductList() {
     }, [sorting]);
 
     return (
-        <section className='products'>
+        <section className='container products'>
             <div className='sortings'>
-                <h2>{category !== DEFAULT && `${category} | `}<Link to='cart' >Shopping Cart ({cart.length})</Link></h2>
-                <select value={brand} onChange={evt => setBrand(evt.target.value)}>
+                <h2>Shop your favourite things!</h2>
+                {/* <select value={brand} onChange={evt => setBrand(evt.target.value)}>
                     <option value={DEFAULT} disabled>Select a brand</option>
                     {brands.map(m => <option key={m} value={m}>{m}</option>)}
-                </select>
-                <select value={category} onChange={evt => setCategory(evt.target.value)}>
-                    <option value={DEFAULT} disabled>Select a category</option>
-                    {categories.map(m => <option key={m} value={m}>{m}</option>)}
-                </select>
-                <select value={sorting} onChange={evt => setSorting(evt.target.value)}>
-                    <option value={DEFAULT} disabled>Select a sorting</option>
-                    {Object.values(sortings).map(m => <option key={m} value={m}>{m}</option>)}
-                </select>
+                </select> */}
+                <div className='sort flex'>
+                    <select value={category} onChange={evt => setCategory(evt.target.value)}>
+                        <option value={DEFAULT} disabled>Select a category</option>
+                        {categories.map(m => <option key={m.name} value={m.name}>{m.name}</option>)}
+                    </select>
+                    <select value={sorting} onChange={evt => setSorting(evt.target.value)}>
+                        <option value={DEFAULT} disabled>Select a sorting</option>
+                        {Object.values(sortings).map(m => <option key={m} value={m}>{m}</option>)}
+                    </select>
+                </div>
             </div>
             <ul>
                 {products.map(product => <ProductListItem key={product.id} {...product} />)}
