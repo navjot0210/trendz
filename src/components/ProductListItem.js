@@ -1,10 +1,10 @@
 import React, { } from 'react'
 import { Link } from 'react-router-dom';
 import { useProductContext } from './ProductContext';
-import { LuShoppingCart } from "react-icons/lu";
+// import { LuShoppingCart } from "react-icons/lu";
 
 function ProductListItem(props) {
-    const { id, brand, price, rating, thumbnail } = props;
+    const { id, title, brand, price, rating, thumbnail } = props;
     const { setCart } = useProductContext();
     const addToCart = () => {
         setCart(prev => [...prev, props]);
@@ -18,13 +18,12 @@ function ProductListItem(props) {
             >
                 <img src={thumbnail} alt={brand} />
             </Link>
+            <p className='product-title'>{title}</p>
             <div>
-                <span>${price}</span>
-                <span>{rating}</span>
-                <LuShoppingCart className='cart' onClick={addToCart} />
+                <span className='price'>${price}</span>
+                {/* <span>{rating}</span> */}
+                <span className='cart' onClick={addToCart}><i className='fa-solid fa-cart-shopping'></i></span>
             </div>
-
-
         </li>
     )
 }
