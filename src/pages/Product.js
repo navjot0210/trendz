@@ -3,6 +3,8 @@ import { useParams, useLocation, Link } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import Suggestions from '../components/Suggestions';
 import { ProductContext, useProductContext } from '../components/ProductContext';
+import Rating from 'react-rating';
+
 
 
 function Product() {
@@ -78,6 +80,12 @@ function Product() {
                     <p className='discounted-price'>${(theProduct.price * (1 - (theProduct.discountPercentage / 100))).toFixed(2)}</p>
                     <p className='discount'>{theProduct.discountPercentage}% OFF</p>
                 </div>
+                <Rating
+                        placeholderRating={theProduct.rating % 1 < 0.5 ? theProduct.rating.toFixed(0) : theProduct.rating.toFixed(0) +1 }
+                        emptySymbol={<img src={require('../media/star-grey.png')} className="icon" alt="grey star" />}
+                        placeholderSymbol={<img src={require('../media/star-red.png')} className="icon" alt="red star" />}
+                        fullSymbol={<img src={require('../media/star-yellow.png')} className="icon" alt="yellow star" />}
+                />
             </div>
             <p className='in-stock'>Available in-stock: {theProduct.stock > 0 ? theProduct.stock : 'Out of stock'}</p>
             <p className='delivery-date'>{deliveryDate}</p>
