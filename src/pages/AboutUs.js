@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../css/about.css";
 
 const teamMembers = [
   { name: "Yaroslav Fedorenko", role: "CEO", image: "" },
