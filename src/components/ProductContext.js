@@ -3,7 +3,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 export const ProductContext = createContext();
 
 export const useProductContext = () => {
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
   const [cart, setCart] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem('cart')) ?? [];

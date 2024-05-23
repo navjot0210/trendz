@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form';
 import { useProductContext } from './ProductContext';
 import '../css/form.css';
 
-function LoginForm() {
+function LoginForm({ show = false }) {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { login, setLogin } = useProductContext();
 
@@ -13,6 +13,10 @@ function LoginForm() {
     const onClick = (evt) => {
         setLogin(false);
     };
+
+    useEffect(() => {
+        setLogin(show);
+    }, []);
 
     return (
         <div className={`login ${login && 'show'}`}>
