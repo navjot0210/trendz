@@ -12,7 +12,7 @@ function Suggestions({ category }) {
     fetch(`https://dummyjson.com/products/category/${category}`)
       .then(res => res.json())
       .then(data => {
-        const products = data.products.length > 4 ? data.products.slice(0, 4) : data.products;
+        const products = data.products.length > 4 ? data.products.slice(0, 5) : data.products;
         setSuggestedProducts(products);
         setLoading(false);
       })
