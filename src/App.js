@@ -13,20 +13,22 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   return (
     <>
-      <ProductContext.Provider value={useProductContext()}>
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/product/:id" element={<Product />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route path="/about" element={<AboutUs />} />
-            <Route path="/*" element={<NotFound />} />
-          </Routes>
-          <LoginForm />
-        </main>
-        <Footer />
-      </ProductContext.Provider>
+      <AnimatePresence>
+        <ProductContext.Provider value={useProductContext()}>
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/product/:id" element={<Product />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/*" element={<NotFound />} />
+            </Routes>
+            <LoginForm />
+          </main>
+          <Footer />
+        </ProductContext.Provider>
+      </AnimatePresence>
     </>
   )
 }
