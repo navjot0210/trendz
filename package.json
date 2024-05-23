@@ -1,13 +1,13 @@
 {
   "name": "trendz",
   "version": "0.1.0",
-  "homepage": "https://navjot0210.github.io/trendz",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "framer-motion": "^11.2.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
