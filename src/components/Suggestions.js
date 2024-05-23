@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 
 
+
 function Suggestions({ category }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
