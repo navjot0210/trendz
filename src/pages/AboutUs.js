@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/error.css";
+import { Helmet } from "react-helmet";
 
 const teamMembers = [
   { name: "Yaroslav Fedorenko", role: "CEO", image: "" },
@@ -31,6 +32,9 @@ const AboutUs = () => {
 
   return (
     <div className="container">
+      <Helmet>
+        <title>About Trendz team</title>
+      </Helmet>
       {/* Intro Section */}
       <section className="intro-section">
         <h1 className="intro-title">Welcome to Trendz</h1>

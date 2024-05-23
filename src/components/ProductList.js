@@ -72,6 +72,16 @@ function ProductList() {
         setProducts(sorted);
     }, [sorting]);
 
+    useEffect(() => {
+        const hash = window.location.hash;
+        if (hash) {
+          const element = document.getElementById(hash.substring(1));
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }, []);
+
     const containerVariants = {
         hidden: { opacity: 1, x: 0 },
         visible: { 
@@ -83,7 +93,7 @@ function ProductList() {
     };
 
   return (
-    <section className="container products">
+    <section className="container products" id="products-list">
       <div className="sortings">
         <h2>Shop your favourite things!</h2>
         {/* <select value={brand} onChange={evt => setBrand(evt.target.value)}>
