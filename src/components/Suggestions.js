@@ -35,7 +35,7 @@ function Suggestions({ category }) {
       <h2>Products you may like</h2>
       <div className='suggestions flex space-between container'>
         {suggestedProducts.map(product => (
-          <NavLink to={`/trendz/product/${product.id}`} key={product.id}>
+          <NavLink to={`/product/${product.id}`} key={product.id}>
             <div className='suggestion'>
               <img src={product.images[0]} alt={product.title} />
               <div className='flex space-between'>

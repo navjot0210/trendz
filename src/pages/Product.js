@@ -79,16 +79,16 @@ function Product() {
             />
             <p className='description'>{theProduct.description}</p>
             <p><span>Brand name: </span>{theProduct.brand}</p>
-            <p><span>Category: </span>{theProduct.category}</p>
+            <p className='category'><span>Category: </span>{theProduct.category}</p>
             <div className='price'>
                 <div className='flex'>
                     <p className='original-price'><span>${theProduct.price}</span></p>
                     <p className='discounted-price'>${(theProduct.price * (1 - (theProduct.discountPercentage / 100))).toFixed(2)}</p>
-                    <p className='discount'>{theProduct.discountPercentage}% OFF</p>
+                    {/* <p className='discount'>{theProduct.discountPercentage}% OFF</p> */}
                 </div>
             </div>
             <p className='in-stock'>Available in-stock: {theProduct.stock > 0 ? theProduct.stock : 'Out of stock'}</p>
-            <p className='delivery-date'>{deliveryDate}</p>
+            
             <div className='flex'>
                 <button className='primary'>Buy now</button>
                 <button className='secondary'
@@ -97,6 +97,7 @@ function Product() {
                     <i className="fas fa-cart-plus"></i> Add to cart
                 </button>
             </div>
+            <p className='delivery-date'>{deliveryDate}</p>
         </div>
       </div>
       <Suggestions category={theProduct.category} />
