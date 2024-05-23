@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Suggestions from "../components/Suggestions";
+import { useNavigate } from 'react-router-dom';
 import {
   ProductContext,
   useProductContext,
@@ -19,7 +20,7 @@ function Product() {
   const [imageSource, setImageSource] = useState("");
   const { id } = useParams();
   const { setCart } = useProductContext();
-
+  const navigate = useNavigate(); 
   const addToCart = () => {
     setCart((prev) => [...prev, theProduct]);
   };
@@ -55,6 +56,11 @@ function Product() {
       setImageSource(theProduct.images[picturePointer]);
     }
   }, [picturePointer, theProduct]);
+
+  const buyNow = () => {
+    addToCart();
+    navigate(`/cart/`);
+  }
 
   if (loading) {
     return <div>Loading...</div>;
@@ -166,7 +172,7 @@ function Product() {
             {theProduct.stock > 0 ? theProduct.stock : "Out of stock"}
           </p>
           <div className="flex">
-            <button className="primary">Buy now</button>
+            <button className="primary" onClick={buyNow}>Buy now</button>
             <button className="secondary" onClick={addToCart}>
               <i className="fas fa-cart-plus"></i> Add to cart
             </button>
