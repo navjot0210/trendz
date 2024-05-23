@@ -1,10 +1,11 @@
-import React from "react";
-import ProductList from "../components/ProductList";
+import React from 'react'
+import ProductList from '../components/ProductList';
+import Slider from '../components/Slider';
 
 function Home() {
   return (
     <>
-      <div className="hero-banner"></div>
+      <Slider />
       <ProductList />
     </>
   );
