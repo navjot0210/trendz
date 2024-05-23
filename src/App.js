@@ -7,6 +7,7 @@ import Product from './pages/Product';
 import NotFound from './pages/NotFound';
 import Cart from './pages/Cart';
 import Home from './pages/Home';
+import LoginForm from './components/LoginForm';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               </Routes>
             } />
           </Routes>
+          <LoginForm show={true} />
         </main>
         <Footer />
       </ProductContext.Provider>
