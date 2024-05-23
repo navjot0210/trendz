@@ -33,6 +33,14 @@ function Footer() {
               <li>Privacy Policy</li>
             </ul>
           </span>
+          <span className='footer-support'>
+          <h4 className='up-case'>Support</h4>
+          <ul>
+              <li>Track Order</li>
+              <li>Returns</li>
+              <li>Report Problem</li>
+            </ul>
+          </span>
           <span className='footer-results'>
           <h4 className='up-case'>Resources</h4>
           <ul>
