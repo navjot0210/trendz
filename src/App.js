@@ -26,7 +26,7 @@ function App() {
               </Routes>
             } />
           </Routes>
-          <LoginForm show={true} />
+          <LoginForm />
         </main>
         <Footer />
       </ProductContext.Provider>
