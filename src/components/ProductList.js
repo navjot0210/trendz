@@ -2,7 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import ProductListItem from "./ProductListItem";
 import { ProductContext, useProductContext } from "./ProductContext";
 // import '../css/products.css';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 function ProductList() {
   const API_PRODUCTS = "https://dummyjson.com/products";
@@ -53,23 +54,33 @@ function ProductList() {
       );
   }, [category]);
 
-  useEffect(() => {
-    let sorted = [...products];
-    switch (sorting) {
-      case sortings.PRICE_HTL:
-        sorted.sort((a, b) => b.price - a.price);
-        break;
-      case sortings.RATINGS_HTL:
-        sorted.sort((a, b) => b.rating - a.rating);
-        break;
-      case sortings.RATINGS_LTH:
-        sorted.sort((a, b) => a.rating - b.rating);
-        break;
-      default:
-        sorted.sort((a, b) => a.price - b.price);
-    }
-    setProducts(sorted);
-  }, [sorting]);
+    useEffect(() => {
+        let sorted = [...products];
+        switch (sorting) {
+            case sortings.PRICE_HTL:
+                sorted.sort((a, b) => b.price - a.price);
+                break;
+            case sortings.RATINGS_HTL:
+                sorted.sort((a, b) => b.rating - a.rating);
+                break;
+            case sortings.RATINGS_LTH:
+                sorted.sort((a, b) => a.rating - b.rating);
+                break;
+            default:
+                sorted.sort((a, b) => a.price - b.price);
+        }
+        setProducts(sorted);
+    }, [sorting]);
+
+    const containerVariants = {
+        hidden: { opacity: 1, x: 0 },
+        visible: { 
+            opacity: 1, x:0,
+            transition: {
+                staggerChildren: 0.1 
+            }
+        }
+    };
 
   return (
     <section className="container products">
@@ -79,42 +90,28 @@ function ProductList() {
                     <option value={DEFAULT} disabled>Select a brand</option>
                     {brands.map(m => <option key={m} value={m}>{m}</option>)}
                 </select> */}
-        <div className="sort flex">
-          <select
-            value={category}
-            onChange={(evt) => setCategory(evt.target.value)}
-          >
-            <option value={DEFAULT} disabled>
-              Select a category
-            </option>
-            {categories.map((m) => (
-              <option key={m.name} value={m.name}>
-                {m.name}
-              </option>
-            ))}
-          </select>
-          <select
-            value={sorting}
-            onChange={(evt) => setSorting(evt.target.value)}
-          >
-            <option value={DEFAULT} disabled>
-              Select a sorting
-            </option>
-            {Object.values(sortings).map((m) => (
-              <option key={m} value={m}>
-                {m}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-      <ul>
-        {products.map((product) => (
-          <ProductListItem key={product.id} {...product} />
-        ))}
-      </ul>
-    </section>
-  );
+                <div className='sort flex'>
+                    <select value={category} onChange={evt => setCategory(evt.target.value)}>
+                        <option value={DEFAULT} disabled>Select a category</option>
+                        {categories.map(m => <option key={m.name} value={m.name}>{m.name}</option>)}
+                    </select>
+                    <select value={sorting} onChange={evt => setSorting(evt.target.value)}>
+                        <option value={DEFAULT} disabled>Select a sorting</option>
+                        {Object.values(sortings).map(m => <option key={m} value={m}>{m}</option>)}
+                    </select>
+                </div>
+            </div>
+            <motion.ul
+                initial="hidden"
+                animate="visible"
+                variants={containerVariants}
+                style={{ listStyleType: 'none', padding: 0 }}
+            >
+                {products.map(product => <ProductListItem key={product.id} {...product} />)}
+            </motion.ul>
+
+        </section>
+    )
 }
 
 export default ProductList;

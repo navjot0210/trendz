@@ -83,12 +83,8 @@ function Product() {
             <motion.img
               src={imageSource}
               alt={theProduct.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{
-                opacity: 1,
-                y: 0,
-                transition: { ease: "easeInOut", duration: 0.4 },
-              }}
+              initial={{ opacity: 0, y: 20, scale: 0.98, rotate: -2}}
+              animate={{ opacity: 1, y: 0, scale: 1, rotate: 0, transition: { ease: "easeInOut", duration: 0.4, delay: 0.1 } }}
               key={picturePointer} // Force re-render by changing key
             />
           </div>
