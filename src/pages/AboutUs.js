@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../css/error.css";
 
 const teamMembers = [
   { name: "Yaroslav Fedorenko", role: "CEO", image: "" },
@@ -30,7 +31,7 @@ const AboutUs = () => {
 
   return (
     <div>
-      /* Intro Section */
+      {/* Intro Section */}
       <section className="intro-section">
         <h1 className="intro-title">Welcome to Trendz</h1>
         <p className="intro-subtitle">
@@ -54,7 +55,7 @@ const AboutUs = () => {
           ))}
         </div>
       </section>
-      /* Contact Us and Feedback Form Section */
+      {/* Contact Us and Feedback Form Section */}
       <section className="contact-feedback-section">
         <div className="contact-us">
           <h2 className="contact-title">Contact Us</h2>

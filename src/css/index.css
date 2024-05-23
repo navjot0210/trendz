@@ -120,6 +120,8 @@ main {
 
 
 /* ------------------------------------------ */
+<<<<<<< HEAD
+=======
 /* Products-List                              */
 /* ------------------------------------------ */
 .products {
@@ -230,6 +232,7 @@ span.price {
 
 
 /* ------------------------------------------ */
+>>>>>>> 2a2825f1cdd8ee0c521181ed71cbcb6efef90875
 /* Product Details                            */
 /* ------------------------------------------ */
 .product-detail {
@@ -247,18 +250,29 @@ span.price {
 
 .picture-box {
   height: 500px;
+<<<<<<< HEAD
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+=======
   background-color: #b6c4f315;
   display: grid;
   place-items: center;
   border-radius: var(--border-radius);
   padding: 10px;
+>>>>>>> 2a2825f1cdd8ee0c521181ed71cbcb6efef90875
 }
 
 .picture-box img {
   width: auto;
+<<<<<<< HEAD
+  height: 500px;
+  border-radius: var(--border-radius);
+=======
   height: 100%;
   border-radius: var(--border-radius);
   object-fit: contain;
+>>>>>>> 2a2825f1cdd8ee0c521181ed71cbcb6efef90875
 }
 
 .thumbnails {
@@ -347,7 +361,11 @@ span.price {
 }
 
 .details .delivery-date {
+<<<<<<< HEAD
+  padding-top: 20px;
+=======
   padding-top: 8px;
+>>>>>>> 2a2825f1cdd8ee0c521181ed71cbcb6efef90875
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--primary-text-color);
@@ -421,7 +439,11 @@ button.secondary:hover {
   width: 200px;
   margin: 10px 0;
   padding: 10px;
+<<<<<<< HEAD
+  border: 1px solid #ddd;
+=======
   box-shadow: 0 0 10px #b6c4f345;
+>>>>>>> 2a2825f1cdd8ee0c521181ed71cbcb6efef90875
   border-radius: 5px;
   text-align: center;
   transition: all 0.25s ease;
@@ -431,10 +453,16 @@ button.secondary:hover {
 }
 
 .suggestion img {
+<<<<<<< HEAD
+  height: 260px;
+  width: auto;
+  border-radius: 5px;
+=======
   height: 200px;
   width: auto;
   border-radius: 5px;
   object-fit: contain;
+>>>>>>> 2a2825f1cdd8ee0c521181ed71cbcb6efef90875
 }
 
 .suggestions a {
@@ -453,7 +481,11 @@ button.secondary:hover {
 }
 
 .suggestion:hover {
+<<<<<<< HEAD
+  transform: scale(1.05);
+=======
   transform: scale(1.04);
+>>>>>>> 2a2825f1cdd8ee0c521181ed71cbcb6efef90875
 }
 
 .suggestion .flex {

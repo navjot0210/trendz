@@ -65,6 +65,45 @@ function Product() {
         <title>{theProduct.title} on Trendz</title>
       </Helmet>
       <div className='container wrapper flex space-between'>
+<<<<<<< HEAD
+        <div className='picture-preview'>
+            <div className='picture-box'>
+                <img src={theProduct.images[picturePointer]} alt={theProduct.title}></img>
+            </div>
+            <div className='thumbnails flex'>
+                {theProduct.images.map((image, index) => (
+                  <img 
+                  src={image} 
+                  alt={`${theProduct.title} thumbnail ${index + 1}`} 
+                  key={index}
+                  onClick={() => setPicturePointer(index)}
+                  className={picturePointer === index ? 'selected-thumbnail' : ''}
+                  >
+                  </img>
+                ))}
+            </div>
+        </div>
+        <div className='details'>
+            <h1>{theProduct.title}</h1>
+            <Rating
+              placeholderRating={theProduct.rating % 1 < 0.5 ? theProduct.rating.toFixed(0) : theProduct.rating.toFixed(0) +1 }
+              emptySymbol={<img src={require('../media/star-grey.png')} className="icon" alt="grey star" />}
+              placeholderSymbol={<img src={require('../media/star-red.png')} className="icon" alt="red star" />}
+              fullSymbol={<img src={require('../media/star-yellow.png')} className="icon" alt="yellow star" />}
+            />
+            <p className='description'>{theProduct.description}</p>
+            <p><span>Brand name: </span>{theProduct.brand}</p>
+            <p className='category'><span>Category: </span>{theProduct.category}</p>
+            <div className='price'>
+                <div className='flex'>
+                    <p className='original-price'><span>${theProduct.price}</span></p>
+                    <p className='discounted-price'>${(theProduct.price * (1 - (theProduct.discountPercentage / 100))).toFixed(2)}</p>
+                    {/* <p className='discount'>{theProduct.discountPercentage}% OFF</p> */}
+                </div>
+            </div>
+            <p className='in-stock'>Available in-stock: {theProduct.stock > 0 ? theProduct.stock : 'Out of stock'}</p>
+            
+=======
         <motion.div 
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0, transition: { ease: "easeInOut", duration: 0.5, delay: 0.1 } }} 
@@ -107,10 +146,15 @@ function Product() {
           <p><span>Brand name: </span>{theProduct.brand}</p>
           <p className='category'><span>Category: </span>{theProduct.category}</p>
           <div className='price'>
+>>>>>>> 2a2825f1cdd8ee0c521181ed71cbcb6efef90875
             <div className='flex'>
               <p className='original-price'><span>${theProduct.price}</span></p>
               <p className='discounted-price'>${(theProduct.price * (1 - (theProduct.discountPercentage / 100))).toFixed(2)}</p>
             </div>
+<<<<<<< HEAD
+            <p className='delivery-date'>{deliveryDate}</p>
+        </div>
+=======
           </div>
           <p className='in-stock'>Available in-stock: {theProduct.stock > 0 ? theProduct.stock : 'Out of stock'}</p>
           <div className='flex'>
@@ -121,6 +165,7 @@ function Product() {
           </div>
           <p className='delivery-date'>{deliveryDate}</p>
         </motion.div>
+>>>>>>> 2a2825f1cdd8ee0c521181ed71cbcb6efef90875
       </div>
       <Suggestions category={theProduct.category} />
     </section>
