@@ -30,21 +30,23 @@ function Suggestions({ category }) {
   }
 
   return (
-    <>
-      <h2 className='container'>Products that may interest you:</h2>
+    <div className='similar-products'>
+    <div className='container'>
+      <h2>Products you may like</h2>
       <div className='suggestions flex space-between container'>
         {suggestedProducts.map(product => (
           <NavLink to={`/trendz/product/${product.id}`} key={product.id}>
             <div className='suggestion'>
               <img src={product.images[0]} alt={product.title} />
               <div className='flex space-between'>
-                <p>{product.title}</p>
+                <p className='suggest-name'>{product.title}</p>
               </div>
             </div>
           </NavLink>
         ))}
       </div>
-    </>
+    </div>
+    </div>
   );
 }
 

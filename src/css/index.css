@@ -116,10 +116,10 @@ html {
 
 
 /* ------------------------------------------ */
-/* Product Detail                             */
+/* Product Details                            */
 /* ------------------------------------------ */
 .product-detail {
-  padding-top: 100px;
+  margin-top: 100px;
 }
 
 .wrapper {
@@ -274,11 +274,77 @@ button.secondary:hover {
 
 
 /* ------------------------------------------ */
+/* Similar Products                           */
+/* ------------------------------------------ */
+.similar-products {
+  margin: 60px 0 0;
+  padding-bottom: 100px;
+  background-color: #fff;
+}
+
+.similar-products h2 {
+  padding-top: 60px;
+  font-size: 2.6rem;
+  color: var(--primary-text-color);
+}
+
+.suggestions {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.suggestions.flex {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.suggestion {
+  text-decoration: none;
+  width: 200px;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.suggestion img {
+  height: 220px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.suggestions a {
+  text-decoration: none;
+  text-align: center;
+  color: var(--primary-text-color);
+  font-weight: 500;
+}
+
+.suggestion p {
+  margin: 5px 0;
+  text-align: center;
+}
+
+.suggestion:hover {
+  transform: scale(1.05);
+}
+
+.suggestion .flex {
+  margin-top: auto;
+}
+
+
+
+/* ------------------------------------------ */
 /* Footer                                     */
 /* ------------------------------------------ */
 footer {
   color: #f8f9fe;
-  margin-top: 80px;
   height: 440px;
   background: linear-gradient( #131547, #000);
 }
