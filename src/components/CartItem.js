@@ -6,7 +6,7 @@ function CartItem({ id, thumbnail, description, price, removeFromCart }) {
   return (
     <li key={Date.now()}>
       <LuTrash2 onClick={() => removeFromCart(id)} />
-      <Link to={`product/${id}`}><img src={thumbnail} alt={description} /></Link>
+      <Link to={`/product/${id}`}><img src={thumbnail} alt={description} /></Link>
       <div>
         <span>${price}</span>
       </div>
