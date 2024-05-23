@@ -1,7 +1,10 @@
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import companyLogo from '../img/company-logo.png';
+import { useProductContext } from './ProductContext';
 
 function Header() {
+  const { cart, setLogin } = useProductContext();
+
   return (
     <header>
       <div className='sub-header'>
@@ -28,8 +31,8 @@ function Header() {
           </div>
           <div className='width-33 user flex gap-30'>
             <i className="fa-solid fa-magnifying-glass"></i>
-            <i className="fa-solid fa-cart-shopping"></i>
-            <i className="fa-solid fa-user"></i>
+            <i className="fa-solid fa-cart-shopping"></i><span>{cart.length}</span>
+            <i className="fa-solid fa-user" onClick={() => setLogin(true)}></i>
           </div>
         </div>
       </div>
