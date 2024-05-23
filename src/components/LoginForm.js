@@ -4,14 +4,16 @@ import { useProductContext } from './ProductContext';
 import '../css/form.css';
 
 function LoginForm() {
-    const { login, setLogin } = useProductContext();
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const { login, setLogin } = useProductContext();
+
     const onSubmit = (data) => {
         setLogin(false);
     };
     const onClick = (evt) => {
         setLogin(false);
     };
+
     return (
         <div className={`login ${login && 'show'}`}>
             <div className="form">
