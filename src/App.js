@@ -16,15 +16,11 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route path="/trendz/*" element={
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/product/:id" element={<Product />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/about" element={<AboutUs />} />
-                <Route path="/*" element={<NotFound />} />
-              </Routes>
-            } />
+            <Route path="/" element={<Home />} />
+            <Route path="/product/:id" element={<Product />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
           <LoginForm />
         </main>

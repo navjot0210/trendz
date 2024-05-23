@@ -32,7 +32,7 @@ function Header() {
           </div>
           <div className='width-33 user flex gap-30'>
             <i className="fa-solid fa-magnifying-glass"></i>
-            <Link to='trendz/cart/'><i className={`fa-solid fa-cart-shopping ${cart.length > 0 && 'cart-not-empty'}`}></i></Link><span>{cart.length}</span>
+            <Link to='cart/'><i className={`fa-solid fa-cart-shopping ${cart.length > 0 && 'cart-not-empty'}`}></i></Link><span>{cart.length}</span>
             <i className="fa-solid fa-user" onClick={() => setLogin(true)}></i>
           </div>
         </div>
