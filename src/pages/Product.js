@@ -71,6 +71,12 @@ function Product() {
         </div>
         <div className='details'>
             <h1>{theProduct.title}</h1>
+            <Rating
+              placeholderRating={theProduct.rating % 1 < 0.5 ? theProduct.rating.toFixed(0) : theProduct.rating.toFixed(0) +1 }
+              emptySymbol={<img src={require('../media/star-grey.png')} className="icon" alt="grey star" />}
+              placeholderSymbol={<img src={require('../media/star-red.png')} className="icon" alt="red star" />}
+              fullSymbol={<img src={require('../media/star-yellow.png')} className="icon" alt="yellow star" />}
+            />
             <p className='description'>{theProduct.description}</p>
             <p><span>Brand name: </span>{theProduct.brand}</p>
             <p><span>Category: </span>{theProduct.category}</p>
@@ -80,12 +86,6 @@ function Product() {
                     <p className='discounted-price'>${(theProduct.price * (1 - (theProduct.discountPercentage / 100))).toFixed(2)}</p>
                     <p className='discount'>{theProduct.discountPercentage}% OFF</p>
                 </div>
-                <Rating
-                        placeholderRating={theProduct.rating % 1 < 0.5 ? theProduct.rating.toFixed(0) : theProduct.rating.toFixed(0) +1 }
-                        emptySymbol={<img src={require('../media/star-grey.png')} className="icon" alt="grey star" />}
-                        placeholderSymbol={<img src={require('../media/star-red.png')} className="icon" alt="red star" />}
-                        fullSymbol={<img src={require('../media/star-yellow.png')} className="icon" alt="yellow star" />}
-                />
             </div>
             <p className='in-stock'>Available in-stock: {theProduct.stock > 0 ? theProduct.stock : 'Out of stock'}</p>
             <p className='delivery-date'>{deliveryDate}</p>
