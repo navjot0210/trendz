@@ -353,6 +353,41 @@ span.price {
   }
 }
 
+.star {
+  color: var(--primary-text-color);
+}
+
+.star i {
+  margin-top: 2px;
+  padding-right: 4px;
+  color: #e1bf00;
+}
+
+.star p {
+  padding-left: 15px;
+  color: var(--secondary-text-color);
+}
+
+.item-title span {
+  font-size: 1.7rem;
+}
+
+.suggestion .star {
+  font-size: 1.4rem;
+  
+  p{
+    padding-left: 8px;
+  }
+}
+
+.item-title {
+  margin-left: 12px;
+  
+  i{
+    margin-top: 4px;
+  }
+}
+
 /* ------------------------------------------ */
 /* Product Details                            */
 /* ------------------------------------------ */

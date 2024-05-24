@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-function Suggestions({ category }) {
+function Suggestions({ rating, category }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [suggestedProducts, setSuggestedProducts] = useState([]);
@@ -41,6 +41,7 @@ function Suggestions({ category }) {
                 <div className="flex space-between">
                   <p className="suggest-name">{product.title}</p>
                 </div>
+                <span className='star flex'><i class="fa-solid fa-star"></i>{product.rating}<p>(3.2K Reviews)</p></span>
                 <div className="flex space-between">
                   <span className="price">${product.price}</span>
                   <span className="cart">
