@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../css/error.css";
+import "../css/about.css";
 import { Helmet } from "react-helmet";
 
 const teamMembers = [

@@ -2,13 +2,14 @@
 import 'react-slideshow-image/dist/styles.css';
 import { Slide } from 'react-slideshow-image';
 import Slider2 from '../img/slider2.png';
-import Slider3 from '../img/slider3.png';
-import Slider4 from '../img/slider4.png';
+import Slider5 from '../img/slider5.png';
+import Slider6 from '../img/slider6.png';
+
 
 const slideImage = [
     { url: Slider2 },
-    { url: Slider3 },
-    { url: Slider4 }
+    { url: Slider6 },
+    { url: Slider5 }
 ]
 
 function Slider() {
