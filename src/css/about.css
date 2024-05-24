@@ -1,98 +1,66 @@
-/* Styles for the Intro Section
-.intro-section {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.team-section {
+  margin-top: 100px;
+  display: grid;
+  place-items: center;
   justify-content: center;
-  text-align: center;
-  background-color: #f8f8f8;
-  padding: 0 20px;
-}
-
-.intro-title {
-  font-size: 2.5rem;
-}
-
-.intro-subtitle {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-}
-
-/* Styles for the Meet Our Team Section */
-/*.team-section {
-  margin: 2rem 0;
-  text-align: center;
 }
 
 .team-title {
-  margin-bottom: 2rem;
+  font-size: 4.4rem;
+  font-weight: 700;
+  color: #333;
 }
 
 .team-cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  gap: 30px;
+  width: 1200px;
 }
 
 .team-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1rem;
-  width: 200px;
-  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+  width: 25%;
+  box-shadow: 0 0 10px #13154709;
+  display: grid;
+  place-items: center;
 }
 
-.team-avatar {
-  width: 100px;
-  height: 100px;
+.team-card img {
+  height: 160px;
+  width: 160px;
   border-radius: 50%;
-  margin-bottom: 1rem;
-}*/
+  box-shadow: 0 0 10px #13154708;
+}
 
-/* Styles for the Contact Us and Feedback Form Section */
-/*.contact-feedback-section {
+.team-name {
+  padding: 10px 0 6px;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.position {
+  font-size: 1.8rem;
+  color: #555;
+}
+
+.program {
+  font-size: 1.4rem;
+  color: #555;
+}
+
+.icons {
+  padding-top: 12px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 20px;
-  margin: 2rem 0;
+  gap: 10px;
+  font-size: 2rem;
+  color: #555;
 }
 
-.contact,
-.feedback {
-  flex: 1;
-  min-width: 280px;
-}
-
-.contact-title,
-.feedback-title {
-  display: flex;
-  margin-bottom: 1rem;
-  justify-content: center;
-}
-
-.feedback-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.feedback-form input,
-.feedback-form button {
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-}
-
-.feedback-form button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
+.icons i {
   cursor: pointer;
 }
 
-.feedback-form button:hover {
-  background-color: #0056b3;
-} */
+.icons i:hover {
+  color: #333;
+}
