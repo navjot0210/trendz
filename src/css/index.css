@@ -16,7 +16,7 @@ html {
 }
 
 main {
-  min-height: 100dvh;
+  min-height: 75dvh;
 }
 
 .container {
@@ -125,7 +125,7 @@ main {
 .cart-length span {
   color: #131547;
   position: relative;
-  top: -88px;
+  top: -84px;
   left: 14px;
   font-size: 1.5rem;
 }
@@ -415,7 +415,7 @@ span.price {
 
 .picture-box img {
   width: auto;
-  height: 100%;
+  height: 500px;
   border-radius: var(--border-radius);
   object-fit: contain;
 }

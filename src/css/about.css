@@ -1,9 +1,10 @@
-main {
+/* main .team-section {
   min-height: auto;
   margin: 94px 0 130px;
-}
+} */
 
 .team-section {
+  margin-top: 94px;
   display: grid;
   place-items: center;
   justify-content: center;
