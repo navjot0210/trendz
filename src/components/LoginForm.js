@@ -32,12 +32,14 @@ function LoginForm({ show = false }) {
             type="text"
             {...register("username", { required: true })}
             className={errors.username && "error"}
+            placeholder='Your registered email'
           />
           <label htmlFor="password">Password</label>
           <input
             type="password"
             {...register("password", { required: true })}
             className={errors.password && "error"}
+            placeholder='6-7 digit password'
           />
           <input type="submit" value="Login" />
         </form>
