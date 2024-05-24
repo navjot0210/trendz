@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import "../css/about.css";
 import { Helmet } from "react-helmet";
+import jj from '../img/jj.jpg';
+import yaroSlav from '../img/yaro-slav.jpg';
+import navJot from '../img/nav-jot.jpg';
+import mdFahim from '../img/md-fahim.jpg';
 
 const teamMembers = [
-  { name: "Yaroslav Fedorenko", role: "CEO", image: "" },
-  { name: "Jia Jia", role: "CTO", image: "" },
-  { name: "Navjot Kaur", role: "COO", image: "" },
-  { name: "Md Fahim", role: "CUO", image: "" },
+  { name: "Yaroslav Fedorenko", role: "CEO", image: {yaroSlav} },
+  { name: "Jia Jia", role: "CTO", image: {jj} },
+  { name: "Navjot Kaur", role: "COO", image: {navJot} },
+  { name: "Md Fahim", role: "CUO", image: {mdFahim} },
 ];
 
 const AboutUs = () => {
@@ -36,12 +40,12 @@ const AboutUs = () => {
         <title>About Trendz team</title>
       </Helmet>
       {/* Intro Section */}
-      <section className="intro-section">
+      {/* <section className="intro-section">
         <h1 className="intro-title">Welcome to Trendz</h1>
         <p className="intro-subtitle">
           Your one-stop shop for the latest trends in fashion.
         </p>
-      </section>
+      </section> */}
       {/* Meet Our Team Section */}
       <section className="team-section">
         <h2 className="team-title">Meet Our Team</h2>
