@@ -1,7 +1,8 @@
-.cart {
-  .cart-items {
-  }
+section.cart {
+  margin-top: 100px;
+}
 
+.cart {
   .cart-item {
     margin: 20px 0;
     padding: 0 40px;
@@ -30,7 +31,7 @@
   }
 
   .empty {
-    background: #fff;
+    margin-top: -100px;
     text-align: center;
     min-height: 100vh;
     align-items: center;

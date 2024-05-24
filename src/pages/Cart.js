@@ -16,7 +16,7 @@ function Cart() {
   return (
     <section className="cart container">
       <Helmet>
-        <title>Trendz shopping cart</title>
+        <title>Trendz | Shopping Cart</title>
       </Helmet>
       {cart.length > 0 ? (
         <>
