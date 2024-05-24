@@ -40,12 +40,12 @@ function Header() {
             <i className="fa-solid fa-magnifying-glass"></i>
             <Link to="cart/">
               <i
-                className={`fa-solid fa-cart-shopping ${
+                className={`cart fa-solid fa-cart-shopping ${
                   cart.length > 0 && "cart-not-empty"
                 }`}
-              ></i>
+              ><div className='cart-length'><span>{cart.length}</span></div></i>
             </Link>
-            <span>{cart.length}</span>
+            
             <i className="fa-solid fa-user" onClick={() => setLogin(true)}></i>
           </div>
         </div>

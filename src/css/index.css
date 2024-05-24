@@ -92,13 +92,17 @@ main {
   align-items: center;
   font-size: 1.7rem;
   font-weight: 500;
-  color: var(--secondary-text-color);
   cursor: var(--cursor);
   transition: var(--transition);
 }
 
-.header-options li:hover {
+.header-options a {
+  text-decoration: none;
   color: rgb(40, 40, 41);
+}
+
+.header-options li:hover {
+  color: var(--secondary-text-color);
 }
 
 .user {
@@ -118,20 +122,17 @@ main {
   color: #636370;
 }
 
+.cart-length span {
+  color: #131547;
+  position: relative;
+  top: -84px;
+  left: 10px;
+  font-size: 1.5rem;
+}
+
 /* ------------------------------------------ */
 /* Slider                                     */
 /* ------------------------------------------ */
-/* .slider {
-  height: 500px;
-  width: 100%;
-  object-fit: cover;
-}
-.slider-img {
-  height: 500px;
-  width: 100%;
-  background: no-repeat center;
-} */
-
 .custom-dot {
   width: 10px;
   height: 10px;
@@ -539,9 +540,9 @@ footer {
 }
 
 .ft-logo {
-  margin-top: -60px;
+  margin-top: -10px;
   width: 240px;
-  height: 160px;
+  height: 100px;
 }
 
 .logo-text {
@@ -549,7 +550,7 @@ footer {
   font-family: "Dancing Script", cursive;
   font-size: 2.6rem;
   font-weight: 500;
-  color: #93a7ff;
+  color: #fff;
 }
 
 footer h4 {
