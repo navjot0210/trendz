@@ -70,7 +70,7 @@ function NotFound() {
         
       </div>
       <div className='text_404'>
-          <div className='text_4041'>Oops...404 - Error!</div>
+          <div className='text_4041 container'>Oops...404 - Error!</div>
       </div>
     </div>
   );

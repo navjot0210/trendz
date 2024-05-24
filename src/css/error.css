@@ -472,5 +472,6 @@
 
 .text_4041 {
   transform: scaleY(25.5) scaleX(11);
-  margin-right: 10em;
+  margin-right: 4em;
+  margin-left: 6em;
 }
