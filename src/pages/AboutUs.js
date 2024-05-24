@@ -8,7 +8,7 @@ import mdFahim from '../img/md-fahim.jpg';
 
 const teamMembers = [
   { name: "Yaroslav Fedorenko", role: "CEO", image: yaroSlav },
-  { name: "Jia Jia", role: "CTO", image: jj },
+  { name: "JJ", role: "CTO", image: jj },
   { name: "Navjot Kaur", role: "COO", image: navJot },
   { name: "Md Fahim", role: "CUO", image: mdFahim },
 ];
@@ -55,7 +55,7 @@ const AboutUs = () => {
               <div className="icons">
                 <i className="fa-brands fa-instagram"></i>
                 <i className="fa-brands fa-linkedin"></i>
-                <i class="fa-solid fa-envelope"></i>
+                <i className="fa-solid fa-envelope"></i>
               </div>
               {/* <div className="team-role">{member.role}</div> */}
             </div>

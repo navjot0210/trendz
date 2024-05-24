@@ -13,7 +13,7 @@ function Header() {
           <p className="up-case">Free shipping on your first order!</p>
           <div className="top-side-options flex gap-20">
             <p className="up-case">
-              Usd <i class="fa-solid fa-angle-down"></i>
+              Usd <i className="fa-solid fa-angle-down"></i>
             </p>
             <p>
               English <i className="fa-solid fa-angle-down"></i>
