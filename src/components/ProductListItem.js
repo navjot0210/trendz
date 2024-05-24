@@ -26,7 +26,7 @@ function ProductListItem(props) {
                 <img src={thumbnail} alt={brand} />
             </Link>
             <p className='product-title'>{title}</p>
-            <span className='star flex'><i class="fa-solid fa-star"></i>{rating}<p>(3.2K Reviews)</p></span>
+            <span className='star flex'><i className="fa-solid fa-star"></i>{rating}<p>(3.2K Reviews)</p></span>
             <div>
                 <span className='price'>${price}</span>
                 <span className='cart' onClick={addToCart}><i className='fa-solid fa-cart-shopping'></i></span>

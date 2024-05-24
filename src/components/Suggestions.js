@@ -41,7 +41,7 @@ function Suggestions({ rating, category }) {
                 <div className="flex space-between">
                   <p className="suggest-name">{product.title}</p>
                 </div>
-                <span className='star flex'><i class="fa-solid fa-star"></i>{product.rating}<p>(3.2K Reviews)</p></span>
+                <span className='star flex'><i className="fa-solid fa-star"></i>{product.rating}<p>(3.2K Reviews)</p></span>
                 <div className="flex space-between">
                   <span className="price">${product.price}</span>
                   <span className="cart">
