@@ -37,7 +37,7 @@ function Product() {
   };
 
   useEffect(() => {
-    if (id > dataSampleSize) {
+    if ((id > dataSampleSize)||(id < 1)) {
       navigate("/404");
       return;
     }
