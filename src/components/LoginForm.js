@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useProductContext } from "./ProductContext";
-import "../css/form.css";
 
 function LoginForm({ show = false }) {
   const {
