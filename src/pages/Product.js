@@ -24,7 +24,8 @@ function Product() {
   const addToCart = () => {
     setCart((prev) => [...prev, theProduct]);
   };
-
+  const dataSampleSize = 194; // the current amount of products in API
+  
   const getDeliveryDate = () => {
     const currentDate = new Date();
     currentDate.setDate(currentDate.getDate() + 2);
@@ -36,20 +37,27 @@ function Product() {
   };
 
   useEffect(() => {
-    fetch(`https://dummyjson.com/products/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setTheProduct(data);
-        setLoading(false);
-        getDeliveryDate();
-        setPicturePointer(0); // Initialize to the first image
-        window.scrollTo(0, 0);
-      })
-      .catch((err) => {
-        setError(err);
-        setLoading(false);
-      });
-  }, [id]);
+    if (id > dataSampleSize) {
+      navigate("/404");
+      return;
+    }
+
+    else {
+      fetch(`https://dummyjson.com/products/${id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setTheProduct(data);
+          setLoading(false);
+          getDeliveryDate();
+          setPicturePointer(0); // Initialize to the first image
+          window.scrollTo(0, 0);
+        })
+        .catch((err) => {
+          setError(err);
+          setLoading(false);
+        });
+    }
+  }, [id, navigate]);
 
   useEffect(() => {
     if (theProduct) {
